@@ -1,5 +1,3 @@
-//making a change to test git
-
 var express           = require('express'),
     app               = express(),
     bodyParser        = require('body-parser'),
@@ -12,7 +10,7 @@ var express           = require('express'),
 var indexRoutes = require('./routes/index'),
     bookRoutes  = require('./routes/books');
 
-mongoose.connect('mongodb+srv://bookSharer:2zetGVrUWtykzhhx@bookshare-p8xsw.mongodb.net/test?retryWrites=true');
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true});
 
 require('./config/passport')(passport);
 
